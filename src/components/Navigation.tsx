@@ -54,7 +54,7 @@ const Navigation = () => {
         </div>
         <div className="relative z-10 container mx-auto flex h-16 items-center justify-between px-4">
           <Link to="/" className="flex items-center">
-            <img src={frostedLogo} alt="Frosted Roleplay" className="h-12" />
+            <img src={frostedLogo} alt="Frosted Roleplay" className="h-12 w-12 object-contain" />
           </Link>
 
         <div className="hidden md:flex items-center space-x-1 bg-black/60 backdrop-blur-sm rounded-lg px-3 py-1">
