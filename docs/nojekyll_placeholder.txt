@@ -1,0 +1,1 @@
+This file exists to ensure Vite copies the `.nojekyll` marker into the build output. It will be renamed during build steps if necessary.
