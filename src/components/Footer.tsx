@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Github } from "lucide-react";
+import frostedLogo from "@/assets/frosted-logo.png";
 
 const Footer = () => {
   return (
@@ -9,10 +10,7 @@ const Footer = () => {
           {/* Left Section - Logo and Copyright */}
           <div className="md:col-span-5">
             <div className="mb-4">
-              <span className="text-2xl font-bold">
-                <span className="text-foreground">FROST</span>
-                <span className="text-primary">ED</span>
-              </span>
+              <img src={frostedLogo} alt="Frosted" className="h-20 w-auto object-contain" />
             </div>
             <p className="text-sm text-muted-foreground mb-2">
               © 2022-2025 Frosted
@@ -41,6 +39,11 @@ const Footer = () => {
                 <li>
                   <Link to="/guides" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                     Oppaat
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/penal-code" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    Lakikirja
                   </Link>
                 </li>
                 

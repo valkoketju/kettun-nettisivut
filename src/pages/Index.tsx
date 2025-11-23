@@ -10,7 +10,7 @@ const Index = () => {
       
       {/* Sankariosio */}
       <section className="relative pt-24 pb-16 px-4">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,107,53,0.15),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(var(--primary)/0.18),transparent_50%)]" />
         
         <div className="container mx-auto relative">
           <div className="max-w-4xl mx-auto">

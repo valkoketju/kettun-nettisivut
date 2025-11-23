@@ -43,7 +43,7 @@ const Navigation = () => {
     { path: "/", label: "Etusivu" },
     { path: "/rules", label: "Säännöt" },
     { path: "/guides", label: "Oppaat" },
-    { path: "/penal-code", label: "Rikoslaki" },
+    { path: "/penal-code", label: "Lakikirja" },
   ];
 
   return (
