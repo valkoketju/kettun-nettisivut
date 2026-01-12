@@ -34,8 +34,8 @@ const Guides = () => {
       <div className="flex pt-16">
 
         {/* Main Content */}
-        <main className="flex-1 md:mr-64">
-          <div className="max-w-3xl mx-auto px-6 md:px-12 py-8">
+        <main className="flex-1 lg:mr-64">
+          <div className="max-w-3xl mx-auto px-4 md:px-6 lg:px-12 py-8">
             <div className="mb-8">
               <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">Oppaat</h1>
               <p className="text-muted-foreground">RedM-oppaat villiin länteen. Aloita perustaitoista ja syvennä roolipeliäsi.</p>

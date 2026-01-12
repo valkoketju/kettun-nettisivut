@@ -12,14 +12,14 @@ const Allowlist = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       
-      <main className="container mx-auto px-4 pt-24 pb-20">
+      <main className="container mx-auto px-4 pt-20 md:pt-24 pb-12 md:pb-20">
         {/* Hero Section */}
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <Card className="p-12 border-border/50 bg-gradient-to-br from-primary/10 to-accent/10">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+        <div className="max-w-4xl mx-auto text-center mb-12 md:mb-16">
+          <Card className="p-6 md:p-8 lg:p-12 border-border/50 bg-gradient-to-br from-primary/10 to-accent/10">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
               City Services & Applications
             </h1>
-            <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+            <p className="text-muted-foreground text-base sm:text-lg max-w-3xl mx-auto">
               Join the Frosted Community and help shape the future of Los Santos. Explore career opportunities in law enforcement, emergency services, and community management.
             </p>
           </Card>
@@ -32,7 +32,7 @@ const Allowlist = () => {
             <p className="text-muted-foreground">Official departments serving the citizens of Los Santos</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {/* Police Department */}
             <Card className="p-6 border-border bg-card relative">
               <Badge className="absolute top-4 right-4 bg-green-500/20 text-green-400 border-green-500/30">
@@ -123,7 +123,7 @@ const Allowlist = () => {
             <p className="text-muted-foreground">Join our team and help build the Frosted Community</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             {/* Support Team */}
             <Card className="p-6 border-border bg-card relative">
               <Badge className="absolute top-4 right-4 bg-green-500/20 text-green-400 border-green-500/30">
@@ -275,9 +275,9 @@ const Allowlist = () => {
         </div>
 
         {/* Allowlist Application CTA */}
-        <div className="max-w-4xl mx-auto mt-16">
-          <Card className="p-8 border-border/50 bg-gradient-to-br from-primary/10 to-accent/10 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
+        <div className="max-w-4xl mx-auto mt-12 md:mt-16">
+          <Card className="p-6 md:p-8 border-border/50 bg-gradient-to-br from-primary/10 to-accent/10 text-center">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4">
               Aloita täällä - Allowlist-hakemus
             </h2>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">

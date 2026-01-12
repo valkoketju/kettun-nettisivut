@@ -2,12 +2,15 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Search, Link as LinkIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Search, Link as LinkIcon, Filter } from "lucide-react";
 import { useState } from "react";
 
   const PenalCode = () => {
     const [searchQuery, setSearchQuery] = useState("");
     const [selectedCategory, setSelectedCategory] = useState("Rikokset henkilöitä vastaan");
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const formatPrisonTime = (value: string) => {
       return value.replace(/months?/i, "kk");
@@ -183,8 +186,8 @@ import { useState } from "react";
       <Navigation />
       
       <main className="flex pt-16">
-        {/* Sidebar */}
-        <aside className="w-72 border-r border-border bg-muted/30 min-h-screen p-4 fixed left-0 top-16 overflow-y-auto">
+        {/* Desktop Sidebar */}
+        <aside className="hidden lg:block w-72 border-r border-border bg-muted/30 min-h-screen p-4 fixed left-0 top-16 overflow-y-auto">
           <div className="mb-6">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
@@ -228,15 +231,76 @@ import { useState } from "react";
           </div>
         </aside>
 
+        {/* Mobile Sidebar */}
+        <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+          <SheetTrigger asChild className="lg:hidden fixed top-20 left-4 z-40">
+            <Button variant="outline" size="icon">
+              <Filter className="h-4 w-4" />
+              <span className="sr-only">Avaa suodattimet</span>
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="left" className="w-[300px] sm:w-[400px]">
+            <SheetHeader>
+              <SheetTitle>Suodata rikoksia</SheetTitle>
+            </SheetHeader>
+            <div className="mt-6">
+              <div className="mb-6">
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <Input
+                    placeholder="Haku..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="pl-9 bg-background"
+                  />
+                </div>
+              </div>
+
+              <nav className="space-y-1">
+                {categories.map((category) => (
+                  <button
+                    key={category}
+                    onClick={() => {
+                      setSelectedCategory(category);
+                      setMobileMenuOpen(false);
+                    }}
+                    className={`w-full text-left px-3 py-2 rounded-md text-sm transition-colors ${
+                      selectedCategory === category
+                        ? "bg-muted text-foreground font-medium"
+                        : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
+                    }`}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </nav>
+
+              <div className="mt-8 p-4 rounded-lg bg-card border border-border">
+                <h3 className="font-bold text-foreground mb-3">Rangaistusohjeet</h3>
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm font-medium text-foreground">Maksimiaika</span>
+                    <span className="text-sm font-medium text-foreground">Maksimisakko</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-lg font-bold text-foreground">120 months</span>
+                    <span className="text-lg font-bold text-foreground">$100,000</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </SheetContent>
+        </Sheet>
+
         {/* Main Content */}
-        <div className="ml-72 flex-1 p-8">
-          <div className="mb-8">
-            <h1 className="text-3xl font-bold text-foreground mb-2 uppercase">
+        <div className="lg:ml-72 flex-1 p-4 md:p-8">
+          <div className="mb-6 md:mb-8">
+            <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-2 uppercase">
               {selectedCategory}
             </h1>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
             {filteredOffenses.map((offense) => {
               return (
                 <Card

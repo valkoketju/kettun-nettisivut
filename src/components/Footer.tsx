@@ -5,8 +5,8 @@ import frostedLogo from "@/assets/frosted-logo.png";
 const Footer = () => {
   return (
     <footer className="relative z-50 border-t border-border bg-background mt-auto">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+      <div className="container mx-auto px-4 py-8 md:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
           {/* Left Section - Logo and Copyright */}
           <div className="md:col-span-5">
             <div className="mb-4">
@@ -22,7 +22,7 @@ const Footer = () => {
           </div>
 
           {/* Middle Section - Navigation Links */}
-          <div className="md:col-span-5 grid grid-cols-2 gap-8">
+          <div className="md:col-span-5 grid grid-cols-2 gap-6 md:gap-8">
             <div>
               <h3 className="text-sm font-semibold mb-4 text-foreground">Navigointi</h3>
               <ul className="space-y-2">
